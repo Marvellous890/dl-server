@@ -1,1 +1,0 @@
-console.log(encodeURIComponent('https://mega.nz/file/zPYlAbQS#a7cHdxFEqUMqxP41uz-JD68vf4ofV-PH7O822M3N7IY'));
