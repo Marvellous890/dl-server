@@ -1,4 +1,10 @@
 import TelegramBot from 'node-telegram-bot-api';
+import { readdirSync } from 'fs';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = '6461978042:AAFz80sAF0w2Fs6VB7zB0mE6gLwoU_Eket4';
@@ -21,16 +27,26 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 
 // Listen for any kind of message. There are different kinds of
 // messages.
+/*
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
 
   // send a message to the chat acknowledging receipt of their message
   bot.sendMessage(chatId, 'Received your message');
 });
+*/
 
 // send file
 bot.onText(/\/sendfile/, (msg, match) => {
   const chatId = msg.chat.id;
 
-  bot.sendDocument(chatId, 'dlfiles/Next Level CSS Creative Hover & Animation Effects Updated 5-2022 [1080P].part2.rar');
+  const fileName = 'Figma UI UX Design Advanced.rar';
+  const filePath = __dirname + '/dlfiles';
+  const partFiles = readdirSync(filePath).filter(file => file.startsWith(`${fileName}.part`));
+  
+  partFiles.forEach((partFile, index) => {
+    const partFilePath = filePath + '/' + partFile;
+
+    bot.sendDocument(chatId, partFilePath);
+  });
 });
