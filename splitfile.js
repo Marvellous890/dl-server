@@ -45,8 +45,8 @@ function joinFilesSync(partFiles, outputFileName) {
 }
 
 // Example usage
-const filePath = __dirname + '/dlfiles/Hype4Academy - Design Better UI. Mobile Apps.rar'; // Change this to the path of your file
-const partSize = 1800000000; // Specify the part size in bytes (e.g., 1 MB)
+const filePath = __dirname + '/dlfiles/Next Level CSS Creative Hover & Animation Effects Updated 5-2022 [1080P].part1.rar'; // Change this to the path of your file
+const partSize = 1048576 * 1024; // Specify the part size in bytes (e.g., 1 MB)
 
 // Split the file into parts based on size
 splitFileBySize(filePath, partSize);

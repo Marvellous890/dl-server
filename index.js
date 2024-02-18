@@ -54,6 +54,11 @@ app.get('/gdrive/:link', async (req, res) => {
 
 });
 
+app.get('/encode/:link', (req, res) => {
+  const link = req.params.link;
+  res.send(encodeURIComponent(link));
+});
+
 // Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
