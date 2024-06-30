@@ -2,7 +2,7 @@
 import fs from "fs";
 import { formatBytes } from "./utils.js";
 
-const stats = fs.statSync('dlfiles/Emil Kowalski - Animations on the web Updated 5-2024.zip.001');
+const stats = fs.statSync('dlfiles/Auto Layout - The Boring Guide.zip');
 
 const fileSizeInBytes = stats.size;
 
