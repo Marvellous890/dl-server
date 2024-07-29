@@ -45,7 +45,7 @@ function joinFilesSync(partFiles, outputFileName) {
 }
 
 // Example usage
-const filePath = __dirname + '/dlfiles/Figma UI UX Design Advanced.rar'; // Change this to the path of your file
+const filePath = __dirname + '/dlfiles/FrontendMasters - The Hard Parts of UI Development.part2.rar'; // Change this to the path of your file
 const partSize = 1048576 * 1024; // Specify the part size in bytes (e.g., 1 MB)
 
 // Split the file into parts based on size

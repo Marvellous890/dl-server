@@ -2,15 +2,16 @@ import TelegramBot from 'node-telegram-bot-api';
 import { readdirSync } from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { log } from 'console';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = '6461978042:AAFz80sAF0w2Fs6VB7zB0mE6gLwoU_Eket4';
+const token = '6479373490:AAHiLW0Y35GiCAngB4D98ylEh1tpzOyLyj0';
 
 // Create a bot that uses 'polling' to fetch new updates
-const bot = new TelegramBot(token, {polling: true, baseApiUrl: "http://209.97.184.9:8081"});
+const bot = new TelegramBot(token, {polling: true, baseApiUrl: "http://104.248.120.99:8081"});
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
@@ -40,13 +41,46 @@ bot.on('message', (msg) => {
 bot.onText(/\/sendfile/, (msg, match) => {
   const chatId = msg.chat.id;
 
-  const fileName = 'Figma UI UX Design Advanced.rar';
-  const filePath = __dirname + '/dlfiles';
-  const partFiles = readdirSync(filePath).filter(file => file.startsWith(`${fileName}.part`));
-  
-  partFiles.forEach((partFile, index) => {
-    const partFilePath = filePath + '/' + partFile;
+  // sending single file
+  // bot.sendDocument(chatId, '/workspaces/dl-server/dlfiles/Build a ModernCreative portfolio html css js three js 2022.part1.rar');
 
-    bot.sendDocument(chatId, partFilePath);
+
+  // sendind part files created with CodeyFJ
+  // const fileName = 'Figma UI UX Design Advanced.rar';
+  // const filePath = __dirname + '/dlfiles';
+  // const partFiles = readdirSync(filePath).filter(file => file.startsWith(`${fileName}.part`));
+  
+  // partFiles.forEach((partFile, index) => {
+  //   const partFilePath = filePath + '/' + partFile;
+
+  //   bot.sendDocument(chatId, partFilePath);
+  // });
+
+
+  // loop through dlfiles folder and send all files
+  const filePath = __dirname + '/dlfiles';
+  const files = readdirSync(filePath);
+  files.forEach((file, index) => {
+    const eachFilePath = filePath + '/' + file;
+
+    // log(eachFilePath);
+
+    bot.sendDocument(chatId, eachFilePath);
   });
+
+
+  // loop through dlfiles folder and send all files per minute
+  // const filePath = __dirname + '/dlfiles';
+  // const files = readdirSync(filePath);
+  // let index = 0;
+  // const interval = setInterval(() => {
+  //   if (index < files.length) {
+  //     const eachFilePath = filePath + '/' + files[index];
+  //     bot.sendDocument(chatId, eachFilePath);
+  //     index++;
+  //   } else {
+  //     clearInterval(interval);
+  //   }
+  // }, 60000);
+
 });
