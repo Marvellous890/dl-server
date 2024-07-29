@@ -38,5 +38,3 @@ export function downloadCopilot(url, dest) {
     });
   });
 }
-
-download('https://download.wetransfer.com/usgv/7a72c938d09a6607b02a91f4163b314420240622095600/2a88bc86e6423b9098231cac62ec39a545bbebbb/bento-cards-v1-multipurpose_NjM0YzVhMGY5MWI3NmIwMDRiZDdkMDY4.zip?cf=y&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImRlZmF1bHQifQ.eyJleHAiOjE3MTkwNTgxMTQsImlhdCI6MTcxOTA1NzUxNCwiZG93bmxvYWRfaWQiOiI5MjdjMDI4YS04M2RhLTRlZDAtYjU5Yi02ODM1YmY5NzZmZDciLCJzdG9yYWdlX3NlcnZpY2UiOiJzdG9ybSJ9.w4bixZ3azlQYuj4oofViYcPP90IEzKsbmbu8UIWIKho', 'dlfiles/bento-cards-v1-multipurpose_NjM0YzVhMGY5MWI3NmIwMDRiZDdkMDY4.zip')
