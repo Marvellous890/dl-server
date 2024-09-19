@@ -45,8 +45,8 @@ function joinFilesSync(partFiles, outputFileName) {
 }
 
 // Example usage
-const filePath = __dirname + '/dlfiles/FrontendMasters - The Hard Parts of UI Development.part2.rar'; // Change this to the path of your file
-const partSize = 1048576 * 1024; // Specify the part size in bytes (e.g., 1 MB)
+const filePath = __dirname + '/dlfiles/Milan Jovanovic - Modular Monolith Architecture.zip.002'; // Change this to the path of your file
+const partSize = 2_000_000_000; // Specify the part size in bytes (e.g., 1 MB)
 
 // Split the file into parts based on size
 splitFileBySize(filePath, partSize);

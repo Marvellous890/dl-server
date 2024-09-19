@@ -42,31 +42,29 @@ bot.onText(/\/sendfile/, (msg, match) => {
   const chatId = msg.chat.id;
 
   // sending single file
-  // bot.sendDocument(chatId, '/workspaces/dl-server/dlfiles/Build a ModernCreative portfolio html css js three js 2022.part1.rar');
+  // bot.sendDocument(chatId, 'dlfiles/FrontendMasters - Svelte & SvelteKit.part2.rar');
 
 
   // sendind part files created with CodeyFJ
-  // const fileName = 'Figma UI UX Design Advanced.rar';
-  // const filePath = __dirname + '/dlfiles';
-  // const partFiles = readdirSync(filePath).filter(file => file.startsWith(`${fileName}.part`));
+  const fileName = 'Milan Jovanovic - Modular Monolith Architecture.zip.002';
+  const filePath = __dirname + '/dlfiles';
+  const partFiles = readdirSync(filePath).filter(file => file.startsWith(`${fileName}.part`));
   
-  // partFiles.forEach((partFile, index) => {
-  //   const partFilePath = filePath + '/' + partFile;
+  partFiles.forEach((partFile, index) => {
+    const partFilePath = filePath + '/' + partFile;
 
-  //   bot.sendDocument(chatId, partFilePath);
-  // });
+    bot.sendDocument(chatId, partFilePath);
+  });
 
 
   // loop through dlfiles folder and send all files
-  const filePath = __dirname + '/dlfiles';
-  const files = readdirSync(filePath);
-  files.forEach((file, index) => {
-    const eachFilePath = filePath + '/' + file;
+  // const filePath = __dirname + '/dlfiles';
+  // const files = readdirSync(filePath);
+  // files.forEach((file, index) => {
+  //   const eachFilePath = filePath + '/' + file;
 
-    // log(eachFilePath);
-
-    bot.sendDocument(chatId, eachFilePath);
-  });
+  //   // bot.sendDocument(chatId, eachFilePath);
+  // });
 
 
   // loop through dlfiles folder and send all files per minute
