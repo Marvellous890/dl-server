@@ -46,15 +46,15 @@ bot.onText(/\/sendfile/, (msg, match) => {
 
 
   // sendind part files created with CodeyFJ
-  const fileName = 'Milan Jovanovic - Modular Monolith Architecture.zip.002';
-  const filePath = __dirname + '/dlfiles';
-  const partFiles = readdirSync(filePath).filter(file => file.startsWith(`${fileName}.part`));
+  // const fileName = 'Milan Jovanovic - Modular Monolith Architecture.zip.002';
+  // const filePath = __dirname + '/dlfiles';
+  // const partFiles = readdirSync(filePath).filter(file => file.startsWith(`${fileName}.part`));
   
-  partFiles.forEach((partFile, index) => {
-    const partFilePath = filePath + '/' + partFile;
+  // partFiles.forEach((partFile, index) => {
+  //   const partFilePath = filePath + '/' + partFile;
 
-    bot.sendDocument(chatId, partFilePath);
-  });
+  //   bot.sendDocument(chatId, partFilePath);
+  // });
 
 
   // loop through dlfiles folder and send all files
@@ -63,7 +63,7 @@ bot.onText(/\/sendfile/, (msg, match) => {
   // files.forEach((file, index) => {
   //   const eachFilePath = filePath + '/' + file;
 
-  //   // bot.sendDocument(chatId, eachFilePath);
+  //   bot.sendDocument(chatId, eachFilePath);
   // });
 
 
