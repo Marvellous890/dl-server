@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 const token = '6479373490:AAHiLW0Y35GiCAngB4D98ylEh1tpzOyLyj0';
 
 // Create a bot that uses 'polling' to fetch new updates
-const bot = new TelegramBot(token, {polling: true, baseApiUrl: "http://104.248.120.99:8081"});
+const bot = new TelegramBot(token, {polling: true, baseApiUrl: "http://167.71.137.135:8081"});
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
@@ -58,13 +58,13 @@ bot.onText(/\/sendfile/, (msg, match) => {
 
 
   // loop through dlfiles folder and send all files
-  // const filePath = __dirname + '/dlfiles';
-  // const files = readdirSync(filePath);
-  // files.forEach((file, index) => {
-  //   const eachFilePath = filePath + '/' + file;
+  const filePath = __dirname + '/dlfiles';
+  const files = readdirSync(filePath);
+  files.forEach((file, index) => {
+    const eachFilePath = filePath + '/' + file;
 
-  //   bot.sendDocument(chatId, eachFilePath);
-  // });
+    bot.sendDocument(chatId, eachFilePath);
+  });
 
 
   // loop through dlfiles folder and send all files per minute
