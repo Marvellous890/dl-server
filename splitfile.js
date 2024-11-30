@@ -9,7 +9,6 @@ const __dirname = dirname(__filename);
 
 // Function to split the file into parts based on size
 function splitFileBySize(filePath, partSize) {
-    let bytesRead = 0;
     let partNumber = 1;
 
     const readStream = createReadStream(filePath, { highWaterMark: partSize });
@@ -20,7 +19,6 @@ function splitFileBySize(filePath, partSize) {
         writeStream.write(chunk);
         writeStream.end();
         console.log(`Created part ${partNumber}: ${partFileName}`);
-        bytesRead += chunk.length;
         partNumber++;
     });
 
