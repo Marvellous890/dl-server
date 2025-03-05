@@ -54,6 +54,16 @@ app.get('/gdrive/:link', async (req, res) => {
 
 });
 
+app.get('/dl/:link/:name', async (req, res) => {
+
+  let fileName = req.params.name;
+  
+  download(req.params.link, 'dlfiles/' + fileName);
+
+  res.send(`Downloading ${fileName} in the background`);
+
+});
+
 app.get('/encode/:link', (req, res) => {
   const link = req.params.link;
   res.send(encodeURIComponent(link));
