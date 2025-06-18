@@ -48,7 +48,7 @@ function joinFilesSync(partFiles, outputFileName) {
 }
 
 // Example usage
-const filePath = __dirname + '/fg-06.bin'; // Change this to the path of your file
+const filePath = __dirname + '/dlfiles/[FreeCourseSite.com] Udemy - Deep Learning A-Z 2025 Neural Networks, AI & ChatGPT Prize.part1.rar'; // Change this to the path of your file
 const partSize = 2_000_000_000; // Specify the part size in bytes (e.g., 1 MB)
 
 // Split the file into parts based on size

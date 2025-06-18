@@ -2,7 +2,8 @@
 import fs from "fs";
 import { formatBytes } from "./utils.js";
 
-const stats = fs.statSync('dlfiles/[FreeCourseSite.com] Udemy - Blockchain A-Z Build a Blockchain, a Crypto + ChatGPT Prize.part1.rar');
+// eg dlfiles/UI Kit & Design System for Figma.zip
+const stats = fs.statSync(process.argv[2]);
 
 const fileSizeInBytes = stats.size;
 
